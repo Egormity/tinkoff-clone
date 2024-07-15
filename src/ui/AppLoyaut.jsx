@@ -15,7 +15,7 @@ export default function AppLoyaut() {
 
       <Navbar />
 
-      <main className='mx-auto max-w-4xl'>
+      <main className='max-w-primary mx-auto px-4'>
         <Outlet />
       </main>
 

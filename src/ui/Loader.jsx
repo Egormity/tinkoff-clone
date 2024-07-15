@@ -1,4 +1,4 @@
-import loaderSvg from './../../public/loader.svg';
+import loaderSvg from './../../public/global/loader.svg';
 
 export default function Loader() {
   return (

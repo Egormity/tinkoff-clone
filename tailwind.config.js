@@ -99,6 +99,9 @@ export default {
         'primary-dark': '#333',
         'primary-grey': '#949494',
       },
+      maxWidth: {
+        primary: '69rem',
+      },
     },
   },
   plugins: [],

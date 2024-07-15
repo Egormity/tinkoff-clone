@@ -1,31 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 
-import logoFull from './../../public/logo-bank-dark.svg';
-import logoVk from './../../public/icon-vk.svg';
-import logoOk from './../../public/icon-ok.svg';
-import logoTwitter from './../../public/icon-twitter.svg';
-import logoTelegram from './../../public/icon-telegram.svg';
-
-const links = [
-  'О Т-Банке',
-  'Новости',
-  'Блог',
-  'Работа',
-  'Точки пополнения',
-  'Банкоматы',
-  'Курс валют',
-  'Контакты',
-  'Помощь',
-  'Безопасность',
-  'Для инвесторов',
-];
-
-const icons = [logoVk, logoOk, logoTwitter, logoTelegram];
+import logoFull from './../../public/global/logo-bank-dark.svg';
+import { footerLinks, footerMediaIcons, footerMediaLinks } from '../data/tinkoffData';
 
 export default function Footer() {
   return (
-    <div className='bg-primary-dark text-primary-grey pb-6 pt-3 text-sm'>
-      <div className='mx-auto grid max-w-4xl grid-cols-[1fr_15rem] gap-y-5 px-4'>
+    <div className='bg-primary-dark pb-6 pt-3 text-sm text-primary-grey'>
+      <div className='max-w-primary mx-auto grid grid-cols-[1fr_15rem] gap-y-5 px-4 max700px:grid-cols-1'>
         <div className='col-span-full ml-[-1rem]'>
           <NavLink to='/'>
             <img src={logoFull} className='h-14' />
@@ -33,14 +14,14 @@ export default function Footer() {
         </div>
 
         <div className='flex flex-wrap gap-x-4 gap-y-2 text-blue-500'>
-          {links.map(link => (
+          {footerLinks.map(link => (
             <NavLink className='duration-200 hover:text-blue-400' key={link}>
               {link}
             </NavLink>
           ))}
         </div>
 
-        <div className='flex flex-col items-end justify-center justify-self-end'>
+        <div className='flex flex-col items-end justify-center justify-self-end max700px:justify-self-start'>
           <Link to='/' className='text-xl font-bold text-white duration-200 hover:text-stone-300'>
             8 800 333-33-33
           </Link>
@@ -69,11 +50,16 @@ export default function Footer() {
           <p>© 2006—2024, АО «ТБанк», официальный сайт, универсальная лицензия ЦБ РФ № 2673</p>
         </div>
 
-        <div className='flex items-center gap-x-4 justify-self-end'>
-          {icons.map((icon, i) => (
-            <Link key={i} className='w-8 rounded-full bg-stone-200 p-1 duration-200 hover:bg-stone-400'>
-              <img src={icon} />
-            </Link>
+        <div className='flex items-center gap-x-4 justify-self-end max700px:justify-self-start'>
+          {footerMediaIcons.map((Icon, i) => (
+            <a
+              href={footerMediaLinks[i]}
+              target='_blank'
+              key={i}
+              className='text-xl duration-200 hover:text-slate-200'
+            >
+              <Icon />
+            </a>
           ))}
         </div>
       </div>
