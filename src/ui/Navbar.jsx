@@ -4,6 +4,7 @@ import logoFull from './../../public/global/logo-bank-transp.svg';
 import { RiUserForbidLine } from 'react-icons/ri';
 import { RiUserFollowLine } from 'react-icons/ri'; // LOGGED IN ICON
 import { IoMenu } from 'react-icons/io5';
+import { IoClose } from 'react-icons/io5';
 
 import { navbarLinks } from '../data/tinkoffData';
 import { useScreenSize } from '../utils/useScreenSize';
@@ -31,8 +32,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className='fixed w-full bg-white'>
-      <ul className='max-w-primary relative mx-auto grid grid-cols-[auto_1fr_auto] items-center space-x-5 pr-4 max700px:grid-cols-[1fr_auto] max700px:px-10'>
+    <nav className='fixed z-50 w-full bg-white'>
+      <ul className='relative mx-auto grid max-w-primary grid-cols-[auto_1fr_auto] items-center space-x-5 pr-4 max700px:grid-cols-[1fr_auto] max700px:px-10'>
         <li>
           <NavLink to='/'>
             <img src={logoFull} className='h-14' />
@@ -52,10 +53,18 @@ export default function Navbar() {
           <div
             className={`${isMenuOpen ? 'translate-x-[1.25rem] translate-y-[-1.25rem] rounded-lg p-[1.25rem] shadow-lg' : ''} absolute right-14 top-2 flex flex-col items-end space-y-8 bg-white`}
           >
-            <IoMenu
-              className='cursor-pointer text-[2.6rem] duration-200 hover:translate-y-[-1px]'
-              onClick={() => setIsMenuOpen(curValue => !curValue)}
-            />
+            {!isMenuOpen ? (
+              <IoMenu
+                className='cursor-pointer text-[2.6rem] duration-200 hover:translate-y-[-1px]'
+                onClick={() => setIsMenuOpen(curValue => !curValue)}
+              />
+            ) : (
+              <IoClose
+                className='cursor-pointer text-[2.6rem] duration-200 hover:translate-y-[-1px]'
+                onClick={() => setIsMenuOpen(curValue => !curValue)}
+              />
+            )}
+
             {isMenuOpen && (
               <>
                 <li className='flex flex-col items-end gap-4'>

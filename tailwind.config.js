@@ -91,11 +91,13 @@ export default {
       },
       colors: {
         primary: '#ffdd2d',
+        'primary-hover': '#ffce2d',
         'primary-dark': '#333',
         'primary-grey': '#949494',
       },
       backgroundColor: {
         primary: '#ffdd2d',
+        'primary-hover': '#ffce2d',
         'primary-dark': '#333',
         'primary-grey': '#949494',
       },

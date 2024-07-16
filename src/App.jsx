@@ -1,22 +1,19 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import AppLoyaut from './ui/AppLoyaut';
-import ErrorMessage from './ui/ErrorMessage';
+import PageNotFound from './ui/PageNotFound';
 import Home from './ui/Home';
 
-const router = createBrowserRouter([
-  {
-    element: <AppLoyaut />,
-    errorElement: <ErrorMessage />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-    ],
-  },
-]);
-
 export default function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLoyaut />}>
+          <Route index element={<Navigate replace to='home' />} />
+          <Route path='home' element={<Home />} />
+        </Route>
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

@@ -35,6 +35,19 @@
     justify-content: center;
     align-items: center;
   }
+
+  .home-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .fade-out-bottom {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 70%, rgba(255, 255, 255, 0.8) 87.5%, white);
+  }
 }
 
 #root {

@@ -26,3 +26,16 @@ export const footerMediaLinks = [
   'https://twitter.com/tbank_ru/',
   'https://t.me/tbank/',
 ];
+
+export const homeOffers = [
+  'Дебетовые карты',
+  'Кредитные карты',
+  'Кредиты',
+  'Премиум',
+  'Вклады',
+  'Инвестиции',
+  'Сим-карта',
+  'Страхование',
+  'Путешествия',
+  'Все для Бизнеса',
+];

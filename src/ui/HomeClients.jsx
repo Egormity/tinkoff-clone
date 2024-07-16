@@ -1,3 +1,3 @@
 export default function HomeClients() {
-  return <div>HomeClients</div>;
+  return <section>HomeClients</section>;
 }
