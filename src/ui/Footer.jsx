@@ -2,11 +2,12 @@ import { Link, NavLink } from 'react-router-dom';
 
 import logoFull from './../../public/global/logo-bank-dark.svg';
 import { footerLinks, footerMediaIcons, footerMediaLinks } from '../data/tinkoffData';
+import { implementToast } from '../utils/helpers';
 
 export default function Footer() {
   return (
     <div className='bg-primary-dark pb-6 pt-3 text-sm text-primary-grey'>
-      <div className='max-w-primary mx-auto grid grid-cols-[1fr_15rem] gap-y-5 px-4 max700px:grid-cols-1'>
+      <div className='mx-auto grid max-w-primary grid-cols-[1fr_15rem] gap-y-5 px-4 max700px:grid-cols-1'>
         <div className='col-span-full ml-[-1rem]'>
           <NavLink to='/'>
             <img src={logoFull} className='h-14' />
@@ -15,9 +16,9 @@ export default function Footer() {
 
         <div className='flex flex-wrap gap-x-4 gap-y-2 text-blue-500'>
           {footerLinks.map(link => (
-            <NavLink className='duration-200 hover:text-blue-400' key={link}>
+            <button onClick={implementToast} className='duration-200 hover:text-blue-400' key={link}>
               {link}
-            </NavLink>
+            </button>
           ))}
         </div>
 

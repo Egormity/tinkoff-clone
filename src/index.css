@@ -63,3 +63,14 @@ html {
     font-size: 90%;
   }
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: inherit;
+  background: #fffaaa;
+}
+
+::selection {
+  color: inherit;
+  background: #fffaaa;
+}

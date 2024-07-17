@@ -39,3 +39,5 @@ export const homeOffers = [
   'Путешествия',
   'Все для Бизнеса',
 ];
+
+export const homeClientServices = ['Продукты', 'Сервисы', 'Работа и развитие'];

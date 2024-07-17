@@ -9,21 +9,22 @@ import { IoClose } from 'react-icons/io5';
 import { navbarLinks } from '../data/tinkoffData';
 import { useScreenSize } from '../utils/useScreenSize';
 import { useState } from 'react';
+import { implementToast } from '../utils/helpers';
 
 function GenerteNavLinks() {
   return navbarLinks.map(link => (
-    <NavLink to='/' key={link} className='duration-200 hover:text-stone-500'>
+    <button onClick={implementToast} key={link} className='duration-200 hover:text-stone-500'>
       {link}
-    </NavLink>
+    </button>
   ));
 }
 
 function PersonalAccount() {
   return (
-    <NavLink className='flex items-center gap-3'>
+    <button onClick={implementToast} className='flex items-center gap-3'>
       <span>Личный кабинет</span>
       <RiUserForbidLine className='text-2xl' />
-    </NavLink>
+    </button>
   );
 }
 
