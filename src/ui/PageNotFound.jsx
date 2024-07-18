@@ -6,7 +6,7 @@ export default function PageNotFound() {
       <h1 className='text-3xl font-black'>Кажется, дальше тупик..</h1>
       <Button
         to={-1}
-        tailwindTextSize='text-2xl'
+        tailwindTextSize='text-xl'
         tailwindPadding='px-4 py-3'
         additionalTailwindClasses='font-semibold'
       >

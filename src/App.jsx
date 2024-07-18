@@ -1,9 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import AppLoyaut from './ui/AppLoyaut';
 import PageNotFound from './ui/PageNotFound';
 import Home from './ui/Home';
-import { Toaster } from 'react-hot-toast';
+import LoginPage from './ui/LoginPage';
 
 export default function App() {
   return (
@@ -13,8 +14,11 @@ export default function App() {
           <Route index element={<Navigate replace to='home' />} />
           <Route path='home' element={<Home />} />
         </Route>
+
+        <Route path='login-page' element={<LoginPage />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
+
       <Toaster
         position='top-center'
         gutter={12}

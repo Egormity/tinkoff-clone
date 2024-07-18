@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { homeClientServices } from '../data/tinkoffData';
 import Heading from './Heading';
-import HomeCard from './HomeCard';
+import HomeCard from './HomeServiceCard';
 import { useScreenSize } from '../utils/useScreenSize';
 import { implementToast } from '../utils/helpers';
+import Button from './Button';
 
 export default function HomeClients() {
   const [activeSection, setActiveSection] = useState(0);
@@ -22,7 +23,7 @@ export default function HomeClients() {
               // setActiveSection(+e.target.dataset.btn)
               if (+e.target.dataset.btn !== 0) implementToast();
             }}
-            className={`${i === activeSection ? 'border-b-2 border-primary text-inherit' : ''} pb-4 text-stone-400 duration-200 hover:translate-y-[-1px] hover:border-b-2 hover:border-stone-400 hover:text-inherit`}
+            className={`${i === activeSection ? 'border-b-2 border-primary text-inherit' : ''} pb-4 text-stone-400 duration-[400ms] hover:translate-y-[-1px] hover:border-b-2 hover:border-stone-400 hover:text-inherit`}
           >
             {service}
           </button>
@@ -77,6 +78,15 @@ export default function HomeClients() {
           />
         </div>
       </div>
+
+      <Button
+        customFunc={implementToast}
+        type='border'
+        tailwindPadding='px-4 py-3'
+        tailwindTextSize='text-base'
+      >
+        Все продукты
+      </Button>
     </section>
   );
 }

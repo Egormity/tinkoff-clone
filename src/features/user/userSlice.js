@@ -1,17 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialSatate = {
-  name: null,
+  loginStage: 'notStarted',
+  isLoggedIn: false,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState: initialSatate,
   reducers: {
-    updateName(state, action) {
-      state.name = action.payload;
+    startLogin(state) {
+      state.loginStage = 'inProcess';
     },
   },
 });
 
+export const { startLogin } = userSlice.actions;
 export default userSlice.reducer;

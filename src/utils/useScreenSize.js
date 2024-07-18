@@ -10,7 +10,7 @@ export function useScreenSize() {
       setScreenWidth(e.target.innerWidth);
     };
     window.addEventListener('resize', changeState);
-    // return window.removeEventListener('resize', changeState);
+    return () => window.removeEventListener('resize', changeState);
   }, []);
 
   return { screenHeight, setScreenHeight, screenWidth, setScreenWidth };

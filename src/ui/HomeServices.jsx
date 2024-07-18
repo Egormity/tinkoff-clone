@@ -13,7 +13,7 @@ export default function HomeServices() {
         в бизнес залы по всему миру
       </p>
 
-      <Button customFunc={implementToast} additionalTailwindClasses='mt-10'>
+      <Button additionalTailwindClasses='mt-10' customFunc={implementToast}>
         Стать премиум-клиентом
       </Button>
 
@@ -22,11 +22,11 @@ export default function HomeServices() {
         <img src='./../../public/landingPage/img-1.png' />
       </div>
 
-      <div className='home-offers-grid mt-4 gap-x-2 gap-y-4'>
+      <div className='home-offers-grid mt-4 gap-x-2 gap-y-4 text-sm'>
         {homeOffers.map((offer, i) => (
           <div
             key={offer}
-            className='flex cursor-pointer flex-col items-center justify-center text-stone-400 duration-200 hover:text-inherit'
+            className='flex cursor-pointer flex-col items-center justify-center text-stone-400 duration-[400ms] hover:text-inherit'
             onClick={implementToast}
           >
             <img src={`./../../public/landingPage/offer-${i + 1}.png`} />

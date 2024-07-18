@@ -1,7 +1,8 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logoFull from './../../public/global/logo-bank-dark.svg';
 import { footerLinks, footerMediaIcons, footerMediaLinks } from '../data/tinkoffData';
+import Button from './Button';
 import { implementToast } from '../utils/helpers';
 
 export default function Footer() {
@@ -14,18 +15,21 @@ export default function Footer() {
           </NavLink>
         </div>
 
-        <div className='flex flex-wrap gap-x-4 gap-y-2 text-blue-500'>
+        <div className='flex flex-wrap gap-x-4 gap-y-2'>
           {footerLinks.map(link => (
-            <button onClick={implementToast} className='duration-200 hover:text-blue-400' key={link}>
+            <Button customFunc={implementToast} key={link} type='link' tailwindTextSize='text-sm'>
               {link}
-            </button>
+            </Button>
           ))}
         </div>
 
         <div className='flex flex-col items-end justify-center justify-self-end max700px:justify-self-start'>
-          <Link to='/' className='text-xl font-bold text-white duration-200 hover:text-stone-300'>
+          <button
+            onClick={implementToast}
+            className='text-xl font-bold text-white duration-[400ms] hover:text-stone-300'
+          >
             8 800 333-33-33
-          </Link>
+          </button>
           <p>Для звонков по России</p>
         </div>
 
@@ -57,7 +61,7 @@ export default function Footer() {
               href={footerMediaLinks[i]}
               target='_blank'
               key={i}
-              className='text-xl duration-200 hover:text-slate-200'
+              className='text-xl duration-[400ms] hover:text-slate-200'
             >
               <Icon />
             </a>
